@@ -2,7 +2,7 @@ $:.unshift File.expand_path('../lib', __FILE__)
 require 'vSphere/version'
 
 Gem::Specification.new do |s|
-  s.name = 'vagrant-vsphere'
+  s.name = 'al-vagrant-vsphere'
   s.version = VagrantPlugins::VSphere::VERSION
   s.authors = ['Andrew Grauch']
   s.email = ['andrew.grauch@nsidc.org']
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'i18n', '~> 0.6.4'
 
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'geminabox'
   s.add_development_dependency 'rspec-core'
   s.add_development_dependency 'rspec-expectations'
   s.add_development_dependency 'rspec-mocks'

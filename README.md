@@ -21,7 +21,7 @@ vagrant-vsphere (**version: 0.16.0**) is available from [RubyGems.org](https://r
 Install using standard Vagrant plugin method:
 
 ```
-$ vagrant plugin install vagrant-vsphere
+$ vagrant plugin install al-vagrant-vsphere --plugin-source=http://<repo server>:9292 --plugin-source=https://rubygems.org
 ```
 
 This will install the plugin from RubyGems.org.
