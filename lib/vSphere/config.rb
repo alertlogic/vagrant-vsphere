@@ -22,6 +22,7 @@ module VagrantPlugins
       attr_accessor :disk_size
       attr_accessor :vlan
       attr_accessor :memory_mb
+      attr_accessor :cpu_count
 
       def validate(machine)
         errors = _detected_errors
