@@ -97,6 +97,7 @@ This provider has the following settings, all are required unless noted:
 * `name` - _Optional_ name of the new VM, if missing the name will be auto generated
 * `customization_spec_name` - _Optional_ customization spec for the new VM
 * `data_store_name` - _Optional_ the datastore where the VM will be located
+* `data_store_cluster_name` - _Optional_ the datastore cluster where the VM will be located
 * `linked_clone` - _Optional_ link the cloned VM to the parent to share virtual disks
 * `proxy_host` - _Optional_ proxy host name for connecting to vSphere via proxy
 * `proxy_port` - _Optional_ proxy port number for connecting to vSphere via proxy

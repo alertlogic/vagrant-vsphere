@@ -29,6 +29,15 @@ module VagrantPlugins
           begin
             location = get_location connection, machine, config, template
             spec = RbVmomi::VIM.VirtualMachineCloneSpec :location => location, :powerOn => false, :template => false
+
+            unless location[:datastore]
+              drs_datastore = get_drs_datastore(connection, machine, template, spec)
+              if drs_datastore
+                location[:datastore] = drs_datastore
+                spec = RbVmomi::VIM.VirtualMachineCloneSpec :location => location, :powerOn => false, :template => false
+              end
+            end
+
             spec[:config] = RbVmomi::VIM.VirtualMachineConfigSpec
             customization_info = get_customization_spec_info_by_name connection, machine
 
@@ -136,10 +145,10 @@ module VagrantPlugins
           else
             location = RbVmomi::VIM.VirtualMachineRelocateSpec
 
-            datastore = get_datastore connection, machine
+            datastore = get_datastore(connection, machine)
             location[:datastore] = datastore unless datastore.nil?
           end
-          location[:pool] = get_resource_pool(connection, machine) unless config.clone_from_vm
+          location[:pool] = get_resource_pool(connection, machine) if machine.provider_config.compute_resource_name
           location
         end
 
