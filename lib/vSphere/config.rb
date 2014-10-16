@@ -16,6 +16,7 @@ module VagrantPlugins
       attr_accessor :vm_base_path
       attr_accessor :customization_spec_name
       attr_accessor :data_store_name
+      attr_accessor :data_store_cluster_name
       attr_accessor :linked_clone
       attr_accessor :proxy_host
       attr_accessor :proxy_port
